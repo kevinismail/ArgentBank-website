@@ -1,4 +1,4 @@
-import { setToken, setUser, setUsername } from "client/src/redux/slices/slice.js";
+import { setToken, setUser, setUsername } from "../reducers/authSlice";
 
 const headers = {
   "Accept": "application/json",
