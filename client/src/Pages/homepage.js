@@ -1,4 +1,5 @@
 import Hero from "../Components/hero";
+import Nav from "../Components/navbar";
 import FeatureItem from "../Components/featureitem";
 import Footer from "../Components/footer";
 import chatIcon from "../images/icon-chat.png";
@@ -9,6 +10,7 @@ import "../Style/main.css";
 const HomePage = () => {
   return (
     <div className="home-page">
+      <Nav />
       <main>
         <Hero />
         <section className="features">

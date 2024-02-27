@@ -1,3 +1,4 @@
+import Navbar from "../Components/navbar"
 import Footer from "../Components/footer";
 import "../Style/main.css";
 import React, { useState } from 'react';
@@ -28,7 +29,9 @@ const LoginPage = () => {
       // For example, validate formData and make an API call
     };
 return (
+  
     <div className="login-page">
+      <Navbar />
       <main className="main bg-dark">
         <section className="sign-in-content">
           <i className="fa fa-user-circle sign-in-icon"></i>
