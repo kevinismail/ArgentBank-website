@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginPage from "./Pages/loginpage";
 import HomePage from "./Pages/homepage";
 import UserPage from "./Pages/userpage"
+import "./Style/main.css"
 
 
 

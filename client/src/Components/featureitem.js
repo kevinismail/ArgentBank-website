@@ -1,5 +1,3 @@
-import '../Style/main.css';
-
 import React from 'react';
 
 const FeatureItem = ({ iconSrc, alt, title, description }) => {

@@ -5,7 +5,7 @@ import Footer from "../Components/footer";
 import chatIcon from "../images/icon-chat.png";
 import moneyIcon from "../images/icon-money.png";
 import securityIcon from "../images/icon-security.png";
-import "../Style/main.css";
+
 
 const HomePage = () => {
   return (

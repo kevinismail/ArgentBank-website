@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Navbar from "../Components/navbar";
 import Footer from "../Components/footer";
-import "../Style/main.css";
+
 import { signIn } from '../redux/api/api'; 
 
 const LoginPage = () => {
@@ -24,12 +24,12 @@ const LoginPage = () => {
   };
 
   const handleSignIn = async (event) => {
-    event.preventDefault(); // Prevent default form submission
-    try {
-      await signIn(formData.username, formData.password, dispatch, navigate);
-      // If signIn is successful, you might want to clear the form or navigate away
-    } catch (error) {
+    event.preventDefault();
+    const success = await signIn(formData.username, formData.password, dispatch, navigate);
+    if (!success) {
       setError("Erreur lors de la connexion. Veuillez vérifier vos identifiants.");
+    } else {
+      setError(''); // Réinitialisez l'état d'erreur
     }
   };
 
@@ -46,7 +46,7 @@ const LoginPage = () => {
               <input
                 type="text"
                 id="username"
-                name="username" // Add name attribute for handleInputChange
+                name="username" // rajoute l'attribut name pour le hanleInputChange
                 value={formData.username}
                 onChange={handleInputChange}
                 autoComplete="username"
@@ -57,7 +57,7 @@ const LoginPage = () => {
               <input
                 type="password"
                 id="password"
-                name="password" // Add name attribute for handleInputChange
+                name="password" 
                 value={formData.password}
                 onChange={handleInputChange}
                 autoComplete="current-password"

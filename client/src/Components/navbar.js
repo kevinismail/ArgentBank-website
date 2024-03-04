@@ -13,7 +13,6 @@ function Nav() {
 
   const handleLogout = () => {
     navigate('/')
-    // Dispatchez l'action de déconnexion ici
     dispatch(logout());    
   };
       
@@ -29,14 +28,15 @@ function Nav() {
           </Link>          
           <div>
           {token ? (
-            <div className="main-nav-auth">
-              <div className="main-nav-auth-profil">{user.userName}</div>
+            <div className="main-nav">
               <div>
-                <i className="fa-solid fa-user"></i>
-                <i className="fa-solid fa-gear"></i>
+                <i className="fa fa-user-circle"></i>
+               
               </div>
-              {token && (
-                <Link className="main-nav-item" to="/" onClick={handleLogout}>
+              <Link className="main-nav-item">{user.userName}</Link>
+           
+              {token && ( //i className="=fa fa-sign-out a mettre devant le logout pour l'icone //
+                <Link className="main-nav-item" to="/" onClick={handleLogout}> <i className="fa fa-sign-out"></i>
                   Logout
                 </Link>
               )}               

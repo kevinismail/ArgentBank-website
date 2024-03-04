@@ -1,0 +1,50 @@
+// _EditProfileForm.scss
+
+.editProfil-main {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+   }
+   
+   .editTitle {
+    color: #2c3e50;
+    font-size: 40px;
+    opacity: 0.8;
+   }
+   
+   .editLabelProfil {
+    color: #222;
+    margin-right: 15px;
+   }
+   
+   .editProfil-container {
+    input {
+       height: 25px;
+       width: 150px;
+       margin-bottom: 10px;
+       border: 1px solid #98999a;
+       border-radius: 5px;  
+    }
+   }
+   
+   #editedFirstname, #editedLastname {
+    background-color: #cdcdce;
+    color: #8e8e8e;
+   }
+   
+   .editProfilButtonContainer {
+    margin-top: 15px;
+    margin-bottom: 15px;
+   }
+   
+   .editProfilButton {
+    background-color: #42b983;
+    color: white;
+    height: 50px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 20px;
+   }
+   

@@ -289,3 +289,61 @@ body {
     width: 200px;
   }
 }
+@media (min-width: 720px) {
+  .account {
+    flex-direction: row;
+  }
+
+  .account-content-wrapper.cta {
+    flex: 0;
+  }
+
+  .transaction-button {
+    width: 200px;
+  }
+}
+
+.editProfil-main {
+  display: flex;
+  flex-direction: column;
+}
+.editProfil-container input {
+  height: 25px;
+  width: 150px;
+  margin-bottom: 10px;
+  border: 1px solid #98999a;
+  border-radius: 5px;  
+}
+
+#editedFirstname, #editedLastname {
+  background-color: #cdcdce;
+  color: #8e8e8e;
+}
+.editProfil-main {
+  background-color: white;
+}
+.editTitle {
+  color: #2c3e50;
+  font-size: 40px;
+  opacity: 0.8;
+}
+.editLabelProfil {
+  color: #222;
+  margin-right: 15px;
+}
+.editProfilButtonContainer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.editProfilButton {
+  background-color: #42b983;
+  color: white;
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+

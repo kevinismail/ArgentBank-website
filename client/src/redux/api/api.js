@@ -19,6 +19,7 @@ export const signIn = async (username, password, dispatch, navigate) => {
       headers: headers,
       body: JSON.stringify(data),
     });
+    console.log("Réponse de l'API:", response); // Avant le traitement de la réponse
 
     if (response.ok) {
       // Extraction du token depuis la réponse JSON.
@@ -27,11 +28,11 @@ export const signIn = async (username, password, dispatch, navigate) => {
 
       // Dispatche le token dans le Redux store
       dispatch(setToken(token));           
-
+      localStorage.setItem('authToken', token); // Stockage du token en local
       navigate('/user');
     } else {
       // Affiche une erreur en cas de problème avec la requête de connexion.
-      console.error('Erreur lors de la requête de connexion:', response.status, response.statusText);
+      throw new Error('Erreur lors de la requête de connexion:', response.status +' '+ response.statusText);
     }
   } catch (error) {
     // Affiche une erreur en cas d'erreur lors de l'exécution de la requête.
@@ -39,7 +40,6 @@ export const signIn = async (username, password, dispatch, navigate) => {
   }
 };
 
-// Fonction pour récupérer le profil de l'utilisateur.
 export const fetchUserProfile = async (token, dispatch) => {
   try {
     
