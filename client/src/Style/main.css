@@ -15,6 +15,7 @@ body {
 
 .main {
   flex: 1;
+  padding: 1rem;
 }
 
 .bg-dark {
@@ -163,6 +164,8 @@ body {
   border-color: #00bc77;
   background-color: #00bc77;
   color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .sign-in-content {
@@ -175,7 +178,7 @@ body {
 }
 
 .sign-in-icon {
-  font-size: 5rem;
+  font-size: 14px;
 }
 
 .input-remember {
