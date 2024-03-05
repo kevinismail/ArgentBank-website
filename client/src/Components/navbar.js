@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from '../redux/reducers/authSlice';
-import logo from '../images/argentBankLogo.png';
+import logo from '../images/argentBankLogo.webp';
 import { Link, useNavigate } from "react-router-dom";
 
 
