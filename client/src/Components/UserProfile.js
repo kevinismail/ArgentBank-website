@@ -12,14 +12,14 @@ const UserProfile = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await fetchUserProfile(token, dispatch); // Utilisez le token récupéré ici
+        await fetchUserProfile(token, dispatch); 
       } catch (error) {
         console.error('Une erreur s\'est produite lors de la récupération du profil :', error);
       }
     };
 
     fetchData();
-  }, [token, dispatch]); // Ajoutez `token` à la liste des dépendances
+  }, [token, dispatch]); 
   
 
   const handleEditButtonClick = () => {

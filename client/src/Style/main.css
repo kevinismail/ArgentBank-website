@@ -349,4 +349,45 @@ body {
   font-size: 20px;
 }
 
-
+.error-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ }
+ 
+ .error-page h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--text-error);
+ }
+ 
+ .error-page img {
+  margin: 1rem auto;
+  max-width: 60%;
+ }
+ 
+ .error-page a {
+  display: block;
+  margin: 1rem auto;
+  color: var(--link-primary);
+ }
+ 
+ @media (min-width: 768px) { 
+  .error-page img {
+     margin: 2rem auto;
+     max-width: 70%;
+  }
+ }
+ 
+ @media (max-width: 480px) { 
+  .error-page h1 {
+     font-size: 2.5rem;
+  }
+ 
+  .error-page img {
+     margin: 2rem auto;
+     max-width: 80%;
+  }
+ }
