@@ -1,5 +1,5 @@
 # voici la partie 2 ou on nous demande d'écrire une documentation pour les transactions : 
-#je veux, consultation du solde actuel, consultation des relevés, 
+#je veux, consultation du solde actuel, consultation des relevés, edition possible mais juste des catégories et notes
 
 swagger: '2.0'
 info:

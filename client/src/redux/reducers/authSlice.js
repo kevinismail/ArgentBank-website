@@ -9,8 +9,11 @@ const authSlice = createSlice({
       firstName: "",
       lastName: "",
       userName: "",
-    },    
-  },
+    },   
+    username: "",
+    password: "",
+ }, 
+  
   reducers: {
     setToken: (state, action) => {
       state.token = action.payload;
@@ -21,13 +24,26 @@ const authSlice = createSlice({
     setUsername: (state, action) => {
       state.user.userName = action.payload;
     },
+    setUsernameAndPassword: (state, action) => {
+      state.username = action.payload.username;
+      state.password = action.payload.password;
+    },
+    clearUsernameAndPassword: (state) => {
+      state.username = "";
+      state.password = "";
+    },
     logout: (state) => {
       state.token = null;
-      state.user = "";
+      state.user = {
+        email:"",
+        firstName:"",
+        lastName:"",
+      };
+      
     },     
   },
 });
 
-export const { setToken, setUser, setUsername, logout } = authSlice.actions;
+export const { setToken, setUser, setUsername, logout, setUsernameAndPassword, clearUsernameAndPassword } = authSlice.actions;
 
 export default authSlice.reducer;

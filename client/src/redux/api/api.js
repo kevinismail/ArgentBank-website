@@ -6,37 +6,50 @@ const headers = {
 };
 
 // Fonction pour la connexion de l'utilisateur.
-export const signIn = async (username, password, dispatch, navigate) => {
+export const signIn = async (username, password, dispatch, navigate, rememberMe) => {
   // Création de l'objet contenant les informations de connexion.
   const data = {
-    email: username,
-    password: password,
+     email: username,
+     password: password,
   };
-
+ 
   try {
-    const response = await fetch('http://localhost:3001/api/v1/user/login', {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify(data),
-    });
-    console.log("Réponse de l'API:", response); // Avant le traitement de la réponse
-
-    if (response.ok) {
-      // Extraction du token depuis la réponse JSON.
-      const responseData = await response.json();
-      const token = responseData.body.token;
-
-      // Dispatche le token dans le Redux store
-      dispatch(setToken(token));           
-      localStorage.setItem('authToken', token); // Stockage du token en local
-      navigate('/user');
-    } else {
-      // Affiche une erreur en cas de problème avec la requête de connexion.
-      throw new Error('Erreur lors de la requête de connexion:', response.status +' '+ response.statusText);
-    }
+     const response = await fetch('http://localhost:3001/api/v1/user/login', {
+       method: "POST",
+       headers: headers,
+       body: JSON.stringify(data),
+     });
+     console.log("Réponse de l'API:", response); // Avant le traitement de la réponse
+ 
+     if (response.ok) {
+       // Extraction du token depuis la réponse JSON.
+       const responseData = await response.json();
+       const token = responseData.body.token;
+ 
+       // Dispatche le token dans le Redux store
+       dispatch(setToken(token));         
+ 
+       // Vérifiez si la case "Remember me" est cochée
+       if (rememberMe) {
+          // Si la case "Remember me" est cochée, stockez les données d'identification
+          localStorage.setItem('username', username);
+          localStorage.setItem('password', password); 
+          localStorage.setItem('authToken', token); // Stockage du token en local
+       } else {
+          // Si la case "Remember me" n'est pas cochée, supprimez les données d'identification
+          localStorage.removeItem('username');
+          localStorage.removeItem('password');
+          localStorage.removeItem('authToken');
+       }
+ 
+       navigate('/user');
+     } else {
+       // Affiche une erreur en cas de problème avec la requête de connexion.
+       throw new Error('Erreur lors de la requête de connexion:', response.status +' '+ response.statusText);
+     }
   } catch (error) {
-    // Affiche une erreur en cas d'erreur lors de l'exécution de la requête.
-    console.error("Erreur lors de la requête:", error);
+     // Affiche une erreur en cas d'erreur lors de l'exécution de la requête.
+     console.error("Erreur lors de la requête:", error);
   }
 };
 
