@@ -31,12 +31,12 @@ export const signIn = async (username, password, dispatch, navigate, rememberMe)
  
        // Vérifiez si la case "Remember me" est cochée
        if (rememberMe) {
-          // Si la case "Remember me" est cochée, stockez les données d'identification
+          // Si la case "Remember me" est cochée, on stock les données 
           localStorage.setItem('username', username);
           localStorage.setItem('password', password); 
           localStorage.setItem('authToken', token); // Stockage du token en local
        } else {
-          // Si la case "Remember me" n'est pas cochée, supprimez les données d'identification
+          // Si la case "Remember me" n'est pas cochée, on delete les données 
           localStorage.removeItem('username');
           localStorage.removeItem('password');
           localStorage.removeItem('authToken');

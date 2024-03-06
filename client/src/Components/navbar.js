@@ -33,7 +33,7 @@ function Nav() {
                 <i className="fa fa-user-circle"></i>
                
               </div>
-              <Link className="main-nav-item">{user.userName}</Link>
+              <Link className="main-nav-item" to="/user">{user.userName}</Link>
            
               {token && ( //i className="=fa fa-sign-out a mettre devant le logout pour l'icone //
                 <Link className="main-nav-item" to="/" onClick={handleLogout}> <i className="fa fa-sign-out"></i>
