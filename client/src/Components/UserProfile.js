@@ -3,6 +3,8 @@ import EditProfileForm from './EditProfileForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUserProfile } from '../redux/api/api';
 
+
+
 const UserProfile = () => {
   const user = useSelector((state) => state.auth.user);
   const token = useSelector((state) => state.auth.token); 

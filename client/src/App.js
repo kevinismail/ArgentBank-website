@@ -6,22 +6,7 @@ import UserPage from "./Pages/userpage"
 import ErrorPage from './Pages/error';
 
 import "./Style/main.css"
-// Dans votre composant principal ou dans un hook personnalisé
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchUserProfile } from './redux/api/api'; // Assurez-vous que cette fonction est exportée
 
-const useRestoreUserSession = () => {
- const dispatch = useDispatch();
-
- useEffect(() => {
-    const token = localStorage.getItem('authToken');
-    if (token) {
-      // Restaurer l'état de connexion de l'utilisateur
-      fetchUserProfile(token, dispatch);
-    }
- }, [dispatch]);
-};
 
 
 

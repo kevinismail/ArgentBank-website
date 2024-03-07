@@ -1,10 +1,18 @@
 import React from 'react';
 import UserProfile from '../Components/UserProfile';
 import Navbar from '../Components/navbar';
+//ajout des imports suite soutenance 
+import { UseSelector, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 
 
+//ajout condition logged pour voir la page
 const Users = () => {      
-  
+  const isLoggedIn = useSelector(state => state.auth.token !== null);
+  // si user n'est pas logué, on renvoie vers loginpage
+  if (!isLoggedIn) {
+    return <Navigate to="/login" />;
+  }
 
     return (
         <div>
